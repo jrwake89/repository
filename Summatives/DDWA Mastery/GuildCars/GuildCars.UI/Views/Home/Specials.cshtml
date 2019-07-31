@@ -1,0 +1,28 @@
+﻿@model GuildCars.UI.Models.HomeViewModel
+
+@{
+    /**/
+
+    ViewBag.Title = "Specials";
+}
+
+<h2>Specials</h2>
+
+@foreach (var special in Model.specials)
+{
+    <div>
+        <table id="SpecialTable">
+            <tbody>
+                <tr>
+                    <td class="dolla-sign" rowspan="4"><img src="~/Images/dollar.jpg" /></td>
+                    <td class="bold-search-cell" style="text-align:left !important"><strong>@special.SpecialTitle</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="7">@special.SpecialDesc</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
+
+

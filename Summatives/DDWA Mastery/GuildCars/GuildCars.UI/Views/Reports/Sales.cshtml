@@ -1,0 +1,78 @@
+﻿@model GuildCars.UI.Models.SalesReportsViewModel
+
+@{
+    ViewBag.Title = "Sales";
+}
+<div class="col-12-xs">
+    <h2>Sales</h2>
+</div>
+
+<div class="col-xs-12">
+    <form id="search-form-salesReport">
+
+        <div class="col-12-xs">
+            <div class="col-xs-9">
+                <p><strong>Filters</strong></p>
+            </div>
+            @Html.ValidationSummary()
+            <div class="col-3-xs"></div>
+        </div>
+
+        <div class="form-row form-inline" id="filter-div">
+            <div class="col-3-md form-group">
+                <label for="UserName" class="control-label">User</label>
+                <select class="form-control" name="UserName" id="username-salesreport">
+                    <option class="selected" value="">- All -</option>
+                    @foreach (var user in Model.users)
+                    {
+                        <option>@user.FirstName @user.LastName</option>
+                    }
+                </select>
+            </div>
+
+            <div id="from-date-div" class="col-3-md form-group">
+                <label id="from-date-label" for="from-date-input" class="control-label">From Date</label>
+                <input type="text" id="from-date-input" class="form-control">
+            </div>
+
+            <div id="to-date-div" class="form-group col-3-md">
+                <label id="to-date-label" for="to-date-input" class="control-label">To Date</label>
+                <input type="text" id="to-date-input" class="form-control">
+            </div>
+
+            <div class="col-3-md">
+            </div>
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-12-xs col-3-md form-group" id="sales-div-button">
+                <button id="sales-button" type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+       
+
+    <div class="col-12-xs">
+        <h3>Search Results</h3>
+    </div>
+
+
+
+    <div class="col-12-xs">
+        <table id="ReportSalesTable" class="table table-striped">
+            <tbody>
+                <tr>
+                    <td><strong>User</strong></td>
+
+                    <td ><strong>Total Sales</strong></td>
+
+                    <td><strong>Total Vehicles</strong></td>
+                </tr>
+
+            </tbody>    
+         </table>
+    </div>
+

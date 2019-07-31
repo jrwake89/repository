@@ -1,0 +1,156 @@
+﻿@model GuildCars.UI.Models.PurchaseViewModel
+
+@{
+    ViewBag.Title = "Purchase";
+}
+
+<div class="col-xs-12">
+    <h2>Purchase Vehicle</h2>
+</div>
+
+
+<table id="purchase-table">
+    <tbody>
+        <tr>
+            <td class="cell-padding" colspan="8">
+                <strong>
+                    @Model.VehicleDetails.Year @Model.VehicleDetails.MakeName @Model.VehicleDetails.ModelName
+                </strong>
+            </td>
+        </tr>
+
+        <tr>
+            <td rowspan="5"><img src="/Images/@Model.VehicleDetails.PictureFileName" /></td>
+            <td class="bold-search-cell"><strong>Body Style:</strong></td>
+            <td>@Model.VehicleDetails.BodyStyle</td>
+            <td class="bold-search-cell"><strong>Interior:</strong></td>
+            <td>@Model.VehicleDetails.InteriorType</td>
+            <td class="bold-search-cell"><strong>Sales Price:</strong></td>
+            <td>$@TempData["SalesPriceDisplay"]</td>
+        </tr>
+
+        <tr>
+            <td class="bold-search-cell"><strong>Trans:</strong></td>
+            <td>@Model.VehicleDetails.TransmitionType</td>
+            <td class="bold-search-cell"><strong>Mileage:</strong></td>
+            <td> @TempData["MileageDisplay"]</td>
+            <td class="bold-search-cell"><strong>MSRP:</strong></td>
+            <td>$@TempData["MSRPDisplay"]</td>
+        </tr>
+
+        <tr>
+            <td class="bold-search-cell"><strong>Color:</strong></td>
+            <td> @Model.VehicleDetails.ColorType</td>
+            <td class="bold-search-cell"><strong>VIN #:</strong></td>
+            <td> @Model.VehicleDetails.VinNum</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td colspan="7"> </td>
+        </tr>
+
+        <tr>
+            <td class="bold-search-cell"><strong>Description:</strong></td>
+            <td colspan="4"> @Model.VehicleDetails.Descrip</td>
+        </tr>
+
+        <tr>
+            <td colspan="7"> </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <div id="contactus-details-button">
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+        <h2>Sales Information</h2>
+
+        <form id="formPurchase" action="/sales/purchase" method="post">
+            @Html.ValidationSummary()
+            @Html.HiddenFor(m => m.VehicleDetails.VehicleId)
+
+            <div class="form-row">
+                <div class="form-group col-md-6 col-xs-12">
+                    <label for="name-box">Name</label>
+                    <input type="text" name="Sale.BuyerName" class="form-control" id="name-box">
+                </div>
+                <div class="form-group col-md-6 col-xs-12">
+                    <label for="phone-box">Phone</label>
+                    <input type="text" name="Sale.Phone" class="form-control" id="phone-box">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6 col-xs-12">
+                    <label for="email-box">Email</label>
+                    <input type="text" name="Sale.Email" class="form-control" id="email-box">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6 col-xs-12">
+                    <label for="street1-box">Street 1</label>
+                    <input type="text" name="Sale.Street1" class="form-control" id="street1-box">
+                </div>
+                <div class="form-group col-md-6 col-xs-12">
+                    <label for="street2-box">Street 2</label>
+                    <input type="text" name="Sale.Street2" class="form-control" id="street2-box">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6 col-xs-12">
+                    <label for="city-box">City</label>
+                    <input type="text" name="Sale.City" class="form-control" id="city-box">
+                </div>
+                <div class="form-group col-md-4 col-xs-12">
+                    <label for="state-box">State</label>
+                    <select name="Sale.StateName" id="inputState" class="form-control">
+                        <option selected>KY</option>
+                        <option>OH</option>
+                        <option>IN</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6 col-xs-12">
+                    <label for="zipcode-box">Zipcode</label>
+                    <input type="text" name="Sale.ZipCode" class="form-control" id="zipcode-box">
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="form-row">
+                <div class="form-group col-md-6 col-xs-12">
+                    <label for="purchase-price-box">Purchase Price</label>
+                    <input type="text" name="Sale.PurchasePrice" class="form-control" id="purchase-price-box">
+                </div>
+                <div class="form-group col-md-6 col-xs-12">
+                    <label for="purchase-type-box">Purchase Type</label>
+                    <select name="Sale.PurchaseType" id="purchase-type-box" class="form-control">
+                        <option selected>Dealer Finance</option>
+                        <option>Cash</option>
+                        <option>Bank Finanace</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+
+
+

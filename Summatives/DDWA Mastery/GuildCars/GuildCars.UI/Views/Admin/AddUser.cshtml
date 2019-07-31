@@ -1,0 +1,57 @@
+﻿@model GuildCars.UI.Models.UserViewModel
+@{
+    ViewBag.Title = "InsertUser";
+}
+
+<div id="add-user-header" class="col-12-xs">
+    <h2>Add User</h2>
+</div>
+
+@using (Html.BeginForm("AddUser", "Admin", FormMethod.Post))
+{
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label>First Name</label>
+            @Html.TextBoxFor(m => m.User.firstName, new { @class = "form-control" })
+        </div>
+        <div class="form-group col-md-4">
+            <label>Last Name</label>
+            @Html.TextBoxFor(m => m.User.lastName, new { @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label>Email</label>
+            @Html.TextBoxFor(m => m.User.UserName, new { @class = "form-control" })
+        </div>
+        <div class="form-group col-md-4">
+            <label>Role</label>
+            @Html.DropDownListFor(m => m.User.roleId, Model.Roles, new { @select = Model.User.roleId, @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label>Password</label>
+            @Html.PasswordFor(m => m.User.PasswordHash, new { @id = "password", @class = "form-control" })
+        </div>
+        <div class="form-group col-md-4">
+            <label>Password Confirmed</label>
+            @Html.PasswordFor(m => m.User.PasswordHash, new { @id = "password-confirmed", @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+
+
+    <button type="submit" id="contactUs-button" class="btn btn-primary">Submit</button>
+}

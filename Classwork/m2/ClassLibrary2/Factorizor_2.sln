@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factorizor.BLL", "ClassLibrary2\Factorizor.BLL.csproj", "{35B90325-7EC7-442A-A3FF-D37E3B486BEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{C2D448BF-E695-4130-A4CD-7D2E866A1263}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35B90325-7EC7-442A-A3FF-D37E3B486BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35B90325-7EC7-442A-A3FF-D37E3B486BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35B90325-7EC7-442A-A3FF-D37E3B486BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35B90325-7EC7-442A-A3FF-D37E3B486BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2D448BF-E695-4130-A4CD-7D2E866A1263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2D448BF-E695-4130-A4CD-7D2E866A1263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2D448BF-E695-4130-A4CD-7D2E866A1263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2D448BF-E695-4130-A4CD-7D2E866A1263}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F1E827E-94DE-46EB-BC76-36590A14C1D9}
+	EndGlobalSection
+EndGlobal

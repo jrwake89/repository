@@ -1,0 +1,370 @@
+﻿
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+
+.featured-vehicle {
+    text-align: center;
+    border: solid;
+    margin-right: 20px;
+    margin-left: 40px;
+    margin-bottom: 25px;
+}
+
+.featured-spacing {
+    margin-left: 60px;
+    margin-bottom: 30px;
+}
+
+.carousel {
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 4s;
+    transition-timing-function: linear;
+}
+
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+
+    .carousel-fade .carousel-inner .active.left,
+    .carousel-fade .carousel-inner .active.right {
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+    }
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+
+
+
+#featured-spacing {
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+#quick-search{
+    width: 100%;
+    margin-top: 25px;
+    border-style: solid;
+    border-collapse: collapse;
+    border-color: black;
+    border-width: 2px;
+    font-weight: bold;
+}
+
+label {
+    vertical-align: middle;
+    font-weight: bold;
+    clear: both;
+
+    margin-right: 15px;
+    display: inline !important;
+}
+
+.contactUs-div {
+    width: 250px !important;
+    margin-right: 200px !important;
+    margin-top: 5px !important;
+    margin-bottom: 10px !important;
+}
+
+.even-search-rows {
+    align-content: flex-end !important;
+    padding-top: 10px;
+}
+
+#purchase-div .form-row {
+    display: block !important;
+}
+
+#search-div-button{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+
+
+#special-add-start {
+    margin-top: 25px;
+}
+
+input#search-box{
+    margin-right: 100px;
+    padding-top: 5px;
+}
+
+select#maxPrice-box {
+    margin-right: 25px;
+}
+
+
+#quick-search td{
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: middle;
+    width: 33%;
+    padding: 10px;
+}
+
+select#maxPrice-box, select#minPrice-box, select#maxYear-box, select#minYear-box {
+    width: 105px !important;
+
+}
+
+.navbar {
+    margin-top: 25px;
+}
+
+#navbar-border {
+    border-style: solid;
+    border-width: 2px;
+    background-color: white;
+}
+
+.navbar-brand {
+    color: black;
+}
+
+a {
+    color: black;
+}
+
+.navbar-toggler {
+    background-color: black;
+    margin-left: 5px;
+}
+
+#logo {
+    vertical-align: unset !important;
+    border-style: none;
+}
+
+table{
+    width: 100% !important;
+    margin-top: 15px;
+}
+
+    table#SearchVehicleTable, #make-form, #model-form, #search-form-salesReport, #search-form-admin, #vehicleId-table, #SpecialTable, table#SalesTable, table#purchase-table, form#add-special-form, form#search-form-sales, form#search-form-new, form#search-form-used {
+        border: solid;
+        border-collapse: separate !important;
+        margin-top: 25px;
+        padding-left: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+/*Center a the vehicle image on index/sales search*/
+td.img-center {
+    padding-left: 25px;
+
+}
+
+#formContactUs {
+    margin-bottom: 15px;
+}
+
+#username-salesreport {
+    margin-right: 30px;
+}
+
+.SpecialTableBorder, #user-table {
+        border: solid;
+        border-collapse: separate !important;
+        margin-top: 25px;
+}
+
+table#SpecialTable {
+    border: solid;
+    border-collapse: separate;
+}
+
+#dolla-sign {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#quick-search-label label {
+    display: block;
+    text-align: left;
+}
+
+ #searchVehicleTable > td{
+     padding: 2px;
+ }
+
+ .cell-padding {
+     padding: 10px;
+ }
+
+td.bold-search-cell{
+    text-align: right !important;
+}
+
+.nav-link a:active {
+    color: black;
+}
+
+.nav-link a:visited {
+    color: black;
+}
+
+button#search-button {
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#details-button{
+    width: 100px;
+}
+
+body {
+    padding-top: 115px;
+}
+
+@media (min-width: 768px) {
+
+    button#search-div-button {
+        text-align: left !important;
+        margin: 0px 0px 0px 0px;
+    }
+}
+
+input#Phone, input#Email, input#ContactName, textarea#ContactMessage, input#Password {
+    width: 250px;
+}
+
+textarea#ContactMessage {
+    margin-bottom: 15px;
+}
+
+a.btn.btn-dark {
+    height: 2em;
+    padding-top: .2em;
+}
+
+#quick-search-div {
+    margin-right: 75px;
+}
+
+input#delete-button-edit {
+    margin-right: 25px;
+}
+
+input#vehicleView_PictureFileName {
+    border: none !important;
+}
+
+#delete-div-special {
+    text-align: right;
+}
+
+form#add-special-form {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 20px;
+}
+
+#filter-div{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.edit-width{
+    width: 60%;
+}
+
+form#search-form-salesReport {
+    padding-left: 10px;
+    margin-bottom: 15px
+}
+
+div#new-car-headers, div#used-car-headers {
+    margin-top: 50px;
+}
+
+.margin-top {
+    margin-top: 30px;
+}
+
+#map {
+    height: 300px;
+    width: 300px; 
+}
+
+#address > p {
+    margin-bottom: 0px !important;
+}
+
+#user-table > thead {
+    background-color: lightgray;
+}
+
+.body-content > a {
+    color: blue !important;
+}
+.carousel-caption#special-jumbo-title {
+    top: 25%;
+    bottom: auto;
+    left: 10%;
+    right:auto;
+    font-size: 40px;
+}
+
+.carousel-caption#special-subtext {
+    top: 37%;
+    bottom: auto;
+    left: 10%;
+    right: auto;
+    font-size: 25px;
+}
+
+a#jumbotron-link {
+    color: white;
+}
+
+td.dolla-sign {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 67px;
+    height: 84px;
+}
+
+button#delete-button-special {
+    margin-top: 5px;
+    margin-right: 5px;
+}

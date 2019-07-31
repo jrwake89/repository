@@ -1,0 +1,73 @@
+﻿@model GuildCars.UI.Models.ContactViewModel
+
+@{
+    /**/
+
+    ViewBag.Title = "ContactUs";
+}
+<div class="col-12-xs">
+    <h2>Contact Us</h2>
+</div>
+
+<div class="row col-12-xs">
+    @using (Html.BeginForm("ContactUs", "Home", FormMethod.Post, new { @id = "formContactUs", @class = "col-12-xs col-6-md" }))
+    {
+        @Html.ValidationSummary()
+        @Html.HiddenFor(m => m.VinNum);
+        <div class="col-12-xs col-6-md">
+            <div id="addVehicle-div" class="col-12-xs col-6-md form-group contactUs-div">
+                <label>Name</label>
+                @Html.TextBoxFor(m => m.ContactName, new { @class = "form-control" })
+            </div>
+
+            <div  class="col-12-xs col-6-md form-group contactUs-div">
+                <label>Email</label>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+
+            <div id="addVehicle-div" class="col-12-xs col-6-md form-group contactUs-div">
+                <label>Phone</label>
+                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", placeholeder = "Phone #" })
+            </div>
+
+            <div id="addVehicle-div" class="col-12-xs col-6-md form-group contactUs-div">
+                <label>Message</label>
+                <textarea type="text" name="ContactMessage" class="form-control">@Model.VinNum</textarea>
+            </div>
+        </div>
+
+        <button type="submit" id="contactUs-button" class="btn btn-primary">Submit</button>
+    }
+        <div class="form-group">
+            <div class="col-6-md col-12-xs" id="map">
+            </div>
+
+            <div id="address">
+                <p>111 W Main Street</p>
+                <p>Kent, OH 44444</p>
+                <br />
+                <p>Sales: 111-111-1111</p>
+                <p>Service: 111-111-1112</p>
+            </div>
+        </div>
+</div>
+       
+
+<script>
+    function initMap() {
+        var billcollins = { lat: 38.185597, lng: - 85.639604 };
+        var map = new google.maps.Map(
+            document.getElementById('map'), { zoom: 12, center: billcollins });
+
+        var marker = new google.maps.Marker({ position: billcollins, map: map });
+    }
+</script>
+
+<!--Load the API from the specified URL
+* The async attribute allows the browser to render the page while the API loads
+* The key parameter will contain your own API key (which is not needed for this tutorial)
+* The callback parameter executes the initMap() function
+-->
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5x738wOewYn-enHjvQNZD5v5Fw7xR_EY&callback=initMap">
+</script>

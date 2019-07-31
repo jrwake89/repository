@@ -1,0 +1,49 @@
+table {
+ border-collapse: separate;
+ border-spacing: 35px 25px;
+  }
+
+td {
+  width: 275px;
+  height: 175px;
+
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#items button{
+  background-color: white;
+  border: none;
+  width: 175px;
+  height: 175px;
+
+}
+
+#money-buttons button{
+  width: 150px;
+}
+
+#make-purchase{
+  width: 250px;
+}
+
+#amount{
+    width: 250px;
+}
+
+#change{
+    width: 250px;
+}
+#change-return{
+    width: 250px;
+}
+
+#sideDisplay label{
+text-align: left;
+font-size: 25px;
+}
+
+#sideDisplay{
+  text-align: center;
+}

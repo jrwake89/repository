@@ -1,0 +1,64 @@
+﻿@model GuildCars.UI.Models.MakesModelsViewModel
+
+@{
+    ViewBag.Title = "Models";
+}
+
+<h2>Models</h2>
+
+
+        @using (Html.BeginForm("Models", "Admin", FormMethod.Post, new { id = "model-form" }))
+        {
+            <div class="form-row">
+                <div class="col-12-xs col-6-md form-group form-inline">
+                    @Html.LabelFor(m => m.model.ModelName, "New Model")
+                    @Html.TextBoxFor(m => m.model.ModelName, new { @class = "form-control" })
+
+                    <input type="hidden" name="model.UserId" id="userid-input" value="@Model.model.UserId">
+                </div>
+
+                <div class="col-12-xs col-6-md form-group form-inline">
+                    @Html.LabelFor(m => m.make.MakeId, "New Make")
+                    @Html.DropDownListFor(m => m.model.MakeId, Model.makeList, new { @class = "form-control" })
+                </div>
+
+                <div class="col-12-xs col-6-md" id="search-div-button">
+                    <button id="search-button" type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+
+        }
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Make
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                Date Added
+            </th>
+            <th>
+                User
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.models)
+        {
+            <tr>
+                <td>@item.MakeName</td>
+                <td>@item.ModelName</td>
+                <td>@item.DateAddedString</td>
+                <td>@item.UserName</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+

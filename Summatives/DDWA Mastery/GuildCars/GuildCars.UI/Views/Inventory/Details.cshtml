@@ -1,0 +1,89 @@
+﻿@model GuildCars.Model.Queries.VehicleDetailsRequest
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="col-12-xs">
+    <h2>Vehicle Details</h2>
+</div>
+
+<div class="col-12-xs">
+    <table id="vehicleId-table">
+        <tbody>
+            <tr>
+                <td class="cell-padding" colspan="8">
+                    <strong>
+                        @Model.Year @Model.MakeName @Model.ModelName
+                    </strong>
+                </td>
+            </tr>
+
+            <tr>
+                <td rowspan="5"><img src="/Images/@Model.PictureFileName" /></td>
+                <td class="bold-search-cell"><strong>Body Style:</strong></td>
+                <td>@Model.BodyStyle</td>
+                <td class="bold-search-cell"><strong>Interior:</strong></td>
+                <td>@Model.InteriorType</td>
+                <td class="bold-search-cell"><strong>Sales Price:</strong></td>
+                <td>$@TempData["SalesPriceDisplay"]</td>
+            </tr>
+
+            <tr>
+                <td class="bold-search-cell"><strong>Trans:</strong></td>
+                <td>@Model.TransmitionType</td>
+                <td class="bold-search-cell"><strong>Mileage:</strong></td>
+                <td> @TempData["MileageDisplay"]</td>
+                <td class="bold-search-cell"><strong>MSRP:</strong></td>
+                <td>$@TempData["MSRPDisplay"]</td>
+            </tr>
+
+            <tr>
+                <td class="bold-search-cell"><strong>Color:</strong></td>
+                <td> @Model.ColorType</td>
+                <td class="bold-search-cell"><strong>VIN #:</strong></td>
+                <td> @Model.VinNum</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td colspan="7"> </td>
+            </tr>
+
+            <tr>
+                <td class="bold-search-cell"><strong>Description:</strong></td>
+                <td colspan="4"> @Model.Descrip</td>
+            </tr>
+
+            <tr>
+                <td colspan="7"> </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div id="contactus-details-button">
+                        @{
+                            if (Model.IsSold == false)
+                            {
+                                <button id="contact-button" onclick="location.href='@Url.Action("ContactUs", "Home", new { VinNum = Model.VinNum })'" type="button" class="btn btn-primary">Contact Us</button>
+                            }
+
+                            else
+                            {
+                                <button id="sold-button" type="button" class="btn btn-sm">Unavailable-Sold</button>
+                            }
+                        }
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
