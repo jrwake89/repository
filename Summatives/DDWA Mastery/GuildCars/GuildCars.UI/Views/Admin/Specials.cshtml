@@ -1,0 +1,61 @@
+﻿@model GuildCars.UI.Models.SpecialViewModel
+
+@{
+    /**/
+
+    ViewBag.Title = "Specials";
+}
+
+<h2>Specials</h2>
+
+@using (Html.BeginForm("Specials", "Admin", FormMethod.Post, new { @id = "add-special-form" }))
+{
+    @Html.ValidationSummary()
+<div id="special-add-start" class="form-row">
+    <div class="form-group col-md-6 col-xs-12">
+        <label class="control-label">Title</label>
+        <input type="text" name="newSpecial.SpecialTitle" value="@Model.newSpecial.SpecialTitle" class="form-control">
+    </div>
+</div>
+
+    
+    <div class="form-row">
+        <div id="speicials-div" class="form-group col-md-6 col-xs-12">
+            <label class="control-label">Description</label>
+            <textarea type="text" name="newSpecial.SpecialDesc" class="form-control">@Model.newSpecial.SpecialDesc</textarea>
+        </div>
+    </div>
+
+    <div class="col-12-xs col-6-md">
+        <button id="search-button" type="submit" class="btn btn-primary">Save</button>
+    </div>
+}
+
+@foreach (var special in Model.specials)
+{
+    <div>
+        
+        <table id="SpecialTable_@special.SpecialId" class="SpecialTableBorder">
+            <tbody>
+                <tr>
+                    <td class="dolla-sign" rowspan="4"><img src="~/Images/dollar.jpg" /></td>
+                    <td class="bold-search-cell" style="text-align:left !important"><strong>@special.SpecialTitle</strong></td>
+                    <td>
+                        <div id="delete-div-special">
+                            @using (Html.BeginForm("DeleteSpecial", "Admin", FormMethod.Post))
+                            {
+                                @Html.Hidden("newSpecial.SpecialId", special.SpecialId)
+                                <button type="submit" id="delete-button-special" onclick="return confirm('Do you want to delete this special?')" class="btn btn-sm btn-danger delete-special">Delete</button>
+                            }
+                        </div>
+                        </td>
+                    
+
+                        </tr>
+                <tr>
+                    <td colspan="7">@special.SpecialDesc</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}

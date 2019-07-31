@@ -1,0 +1,83 @@
+﻿@model GuildCars.UI.Models.InventoryViewModel
+
+@{
+    ViewBag.Title = "inventory";
+}
+<div class="col-12-xs">
+    <h2>Inventory Report</h2>
+</div>
+
+<div id="new-car-headers"><h4>New Vehicles</h4></div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Year
+            </th>
+            <th>
+                Make
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                Count
+            </th>
+            <th>
+                Stock Value
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vehicle in Model.NewCars)
+        {
+            <tr>
+                <td>@vehicle.Year</td>
+                <td>@vehicle.MakeName</td>
+                <td>@vehicle.ModelName</td>
+                <td>@vehicle.Count</td>
+                <td>$@vehicle.StockValue</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div id="used-car-headers"><h4>Used Vehicles</h4></div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Year
+            </th>
+            <th>
+                Make
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                Count
+            </th>
+            <th>
+                Stock Value
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vehicle in Model.UsedCars)
+        {
+            <tr>
+                <td>@vehicle.Year</td>
+                <td>@vehicle.MakeName</td>
+                <td>@vehicle.ModelName</td>
+                <td>@vehicle.Count</td>
+                <td>$@vehicle.StockValue</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

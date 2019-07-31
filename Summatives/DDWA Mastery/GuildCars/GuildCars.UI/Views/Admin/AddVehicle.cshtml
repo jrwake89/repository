@@ -1,0 +1,124 @@
+﻿@model  GuildCars.UI.Models.VehicleViewModel
+
+@{
+                /**/
+
+                /**/
+
+                ViewBag.Title = "AddVehicle";
+}
+
+<h2>Add Vehicle</h2>
+
+
+
+@using (Html.BeginForm("AddVehicle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", id = "formAddVehicle" }))
+{
+    @Html.ValidationSummary()
+    <div class="form-row">
+        <div id="addVehicle-div-make" class="form-group col-md-6 col-xs-12">
+            <label>Make</label>
+            @Html.DropDownListFor(m => m.vehicle.MakeId, Model.Makes, new { @class = "form-control  edit-width" })
+        </div>
+
+        <div id="addVehicle-div-model" class="form-group col-md-6 col-xs-12">
+            <label>Models</label>
+            @Html.DropDownListFor(m => m.vehicle.ModelId, @Model.Models, new { @disabled ="disabled", @class = "form-control  edit-width" })
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div id="addVehicle-div-type" class="form-group col-md-6 col-xs-12">
+            <label>Type</label>
+            @Html.DropDownListFor(m => m.vehicle.IsNew, @Model.CarType, new { @class = "form-control  edit-width" })
+        </div>
+
+        <div id="addVehicle-div-bodystyle" class="form-group col-md-6 col-xs-12">
+            <label>Body Style</label>
+            @Html.DropDownList("vehicle.BodyStyleId", @Model.BodyStyle, new { @class = "form-control  edit-width" })
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div id="addVehicle-div-year" class="form-group col-md-6 col-xs-12">
+            <label id="year-label" for="year-input" class="control-label">Year</label>
+            <input type="text" name="vehicle.Year" value="" id="year-input" class="form-control edit-width">
+        </div>
+
+        <div id="addVehicle-div-transmition" class="form-group col-md-6 col-xs-12">
+            <label>Transmition</label>
+            @Html.DropDownListFor(m => m.vehicle.TransmitionId, @Model.Transmition, new { @class = "form-control  edit-width" })
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div id="addVehicle-div-color" class="form-group col-md-6 col-xs-12">
+            <label>Color</label>
+            @Html.DropDownListFor(m => m.vehicle.ColorId, @Model.Colors, new { @class = "form-control edit-width" })
+        </div>
+
+        <div id="addVehicle-div-interior" class="form-group col-md-6 col-xs-12">
+            <label>Interior</label>
+            @Html.DropDownListFor(m => m.vehicle.InteriorId, @Model.Interiors, new { @class = "form-control edit-width" })
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div id="addVehicle-div-mileage" class="form-group col-md-6 col-xs-12">
+            <label id="mileage-label" for="mileage-input" class="control-label">Mileage</label>
+            <input type="text" name="vehicle.Mileage" value="" id="mileage-input" class="form-control edit-width">
+        </div>
+
+        <div id="addVehicle-div-VIN" class="form-group col-md-6 col-xs-12">
+            <label id="vin-label" for="vin-input" class="control-label">VIN #</label>
+            <input type="text" name="vehicle.VinNum" value="" id="vin-input" class="form-control edit-width">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div id="addVehicle-div-msrp" class="form-group col-md-6 col-xs-12">
+            <label id="msrp-label" for="msrp-input" class="control-label">MSRP</label>
+            <input type="text" name="vehicle.MSRP" id="msrp-input" value="" class="form-control edit-width">
+        </div>
+
+        <div id="addVehicle-div-salesprice" class="form-group col-md-6 col-xs-12">
+            <label id="sales-price-label" for="sales-price-input" class="control-label">Sales Price</label>
+            <input type="text" name="vehicle.SalesPrice" id="sales-price-input" value="" class="form-control edit-width">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div id="addVehicle-div-desc" class="form-group col-md-6 col-xs-12">
+            <label id="description-label" for="description-input" class="control-label">Description</label>
+            <textarea type="text" name="vehicle.Descrip" id="description-input" class="form-control edit-width">@Model.vehicle.Descrip</textarea>
+        </div>
+    </div>
+
+    <div class="form-row form-check-inline">
+        <div id="addVehicle-div-featured" class="form-check col-xs-12">
+            <label class="form-check-label">Feature this vehicle</label>
+            @Html.CheckBoxFor(m => m.vehicle.IsFeatured, new { @checked = Model.vehicle.IsFeatured, @class = "form-check-input" })
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class=" form-group col-12-xs">
+
+            <label>Picture</label>
+            <input id="ImageUpload" name="ImageUpload" class="form-control" type="file" />
+
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div id="delete-button-div" class="form-group">
+            <input type="button" value="Delete" id="delete-button-edit" class="btn btn-sm btn-danger" />
+        </div>
+        <div class=" form-group">
+            <button id="editVehicle-save-button" class="btn btn-sm btn-primary">Save</button>
+        </div>
+    </div>
+}
+
+
+
